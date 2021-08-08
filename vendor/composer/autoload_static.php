@@ -4,17 +4,32 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit75b38578e2948b38372c6f528ee1f0d2
+class ComposerStaticInit116df0c23c3d56830b981cbd663508a7
 {
     public static $files = array (
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
         '972fda704d680a3a53c68e34e193cb22' => __DIR__ . '/..' . '/react/promise-timer/src/functions_include.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '3be16222a6efa6dd226a219eaaff823b' => __DIR__ . '/..' . '/ratchet/pawl/src/functions_include.php',
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Workerman\\' => 10,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Php72\\' => 23,
+            'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
+            'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
+        ),
         'R' => 
         array (
             'React\\Stream\\' => 13,
@@ -31,13 +46,41 @@ class ComposerStaticInit75b38578e2948b38372c6f528ee1f0d2
         array (
             'Psr\\Http\\Message\\' => 17,
         ),
+        'M' => 
+        array (
+            'Mvaessen\\BinanceApi\\' => 20,
+        ),
+        'L' => 
+        array (
+            'Lin\\Binance\\' => 12,
+            'Larislackers\\BinanceApi\\' => 24,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
+            'GlobalData\\' => 11,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Workerman\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/workerman/workerman',
+        ),
+        'Symfony\\Polyfill\\Php72\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php72',
+        ),
+        'Symfony\\Polyfill\\Intl\\Normalizer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer',
+        ),
+        'Symfony\\Polyfill\\Intl\\Idn\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-idn',
+        ),
         'React\\Stream\\' => 
         array (
             0 => __DIR__ . '/..' . '/react/stream/src',
@@ -78,9 +121,33 @@ class ComposerStaticInit75b38578e2948b38372c6f528ee1f0d2
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
+        'Mvaessen\\BinanceApi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mvaessen/binance-api/src',
+        ),
+        'Lin\\Binance\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/linwj/binance/src',
+        ),
+        'Larislackers\\BinanceApi\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/larislackers/php-binance/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'GlobalData\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/workerman/globaldata/src',
         ),
     );
 
@@ -95,18 +162,20 @@ class ComposerStaticInit75b38578e2948b38372c6f528ee1f0d2
     );
 
     public static $classMap = array (
+        'Binance' => __DIR__ . '/..' . '/baitercel/binance-api-php/BinanceClass.php',
         'Binance\\API' => __DIR__ . '/..' . '/jaggedsoft/php-binance-api/php-binance-api.php',
         'Binance\\RateLimiter' => __DIR__ . '/..' . '/jaggedsoft/php-binance-api/php-binance-api-rate-limiter.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit75b38578e2948b38372c6f528ee1f0d2::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit75b38578e2948b38372c6f528ee1f0d2::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit75b38578e2948b38372c6f528ee1f0d2::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit75b38578e2948b38372c6f528ee1f0d2::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit116df0c23c3d56830b981cbd663508a7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit116df0c23c3d56830b981cbd663508a7::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit116df0c23c3d56830b981cbd663508a7::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit116df0c23c3d56830b981cbd663508a7::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -6,7 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Binance' => $vendorDir . '/baitercel/binance-api-php/BinanceClass.php',
     'Binance\\API' => $vendorDir . '/jaggedsoft/php-binance-api/php-binance-api.php',
     'Binance\\RateLimiter' => $vendorDir . '/jaggedsoft/php-binance-api/php-binance-api-rate-limiter.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Normalizer' => $vendorDir . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
 );

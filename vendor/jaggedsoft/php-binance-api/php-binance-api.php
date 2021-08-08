@@ -660,13 +660,21 @@ class API
      * 
      * @property int $weight 1
      * 
+     * @param string $asset  (optional)  Should be an asset, e.g. BNB or empty to get the full list
+     *
      * @return array containing the response
      */
-    public function assetDetail()
+    public function assetDetail($asset = '')
     {
         $params["sapi"] = true;
+        if ($asset != '' && gettype($asset) == 'string')
+            $params['asset'] = $asset;
         $arr = $this->httpRequest("v1/asset/assetDetail", 'GET', $params, true);
-        // wrap into another array for backwards compatibility with the old wapi one
+        // if asset was set, no backward compatibility needed as this was implemented later
+        if (isset($params['asset']))
+            return $arr;
+
+        // wrap into another array for backward compatibility with the old wapi one
         if (!empty($arr['BTC']['withdrawFee'])) {
             return array(
                 'success'     => 1,
@@ -864,7 +872,7 @@ class API
         $return = $this->httpRequest("v1/capital/deposit/hisrec", "GET", $params, true);
 
         // Adding for backwards compatibility with wapi
-        foreach ($return as $key->$item) {
+        foreach ($return as $key=>$item) {
             $return[$key]['asset'] = $item['coin'];
         }
         
@@ -2846,5 +2854,71 @@ class API
         $arr = array();
         $arr['sapi'] = $this->httpRequest("v1/account/apiTradingStatus", 'GET', [ 'sapi' => true ], true);
         return $arr;
+    }
+    
+    /**
+     * ocoOrder - Create a new OCO order
+     * 
+     * @link https://binance-docs.github.io/apidocs/spot/en/#new-oco-trade
+     * 
+     * @property int $weight 1
+     * 
+     * @param string $side       (mandatory)   Should be SELL or BUY
+     * @param string $symbol     (mandatory)   The symbol, e.g. BTCBUSD
+     * @param float  $quantity   (mandatory)   Quantity to buy/sell
+     * @param int    $price      (mandatory)   Price
+     * @param int    $stopprice  (mandatory)   Stop Price
+     * @param int    $stoplimitprice        (optional)   Stop Limit Price
+     * @param int    $stoplimittimeinforce  (optional)   GTC, FOK or IOC
+     * @param array  $flags                 (optional)   Extra flags/parameters
+     * 
+     * @return array containing the response
+     * @throws \Exception
+     */
+    public function ocoOrder(string $side, string $symbol, $quantity, $price, $stopprice, $stoplimitprice = null, $stoplimittimeinforce = 'GTC', array $flags = [])
+    {
+        $opt = [
+            "symbol" => $symbol,
+            "side" => $side,
+            "recvWindow" => 60000,
+        ];
+
+        if (is_numeric($quantity) === false) {
+            $error = "Parameter quantity expected numeric for ' $side . ' ' . $symbol .', got " . gettype($quantity);
+            trigger_error($error, E_USER_ERROR);
+        } else {
+            $opt['quantity'] = $quantity;
+        }
+
+        if (is_numeric($price) === false) {
+            $error = "Parameter price expected numeric for ' $side . ' ' . $symbol .', got " . gettype($price);
+            trigger_error($error, E_USER_ERROR);
+        } else {
+            $opt['price'] = $price;
+        }
+
+        if (is_numeric($stopprice) === false) {
+            $error = "Parameter stopprice expected numeric for ' $side . ' ' . $symbol .', got " . gettype($stopprice);
+            trigger_error($error, E_USER_ERROR);
+        } else {
+            $opt['stopprice'] = $stopprice;
+        }
+
+        if (is_null($stoplimitprice) === false && empty($stoplimitprice) === false) {
+            $opt['stopLimitPrice'] = $stoplimitprice;
+            if ( ($stoplimittimeinforce == 'FOK') || ($stoplimittimeinforce == 'IOC') ) {
+                $opt['stopLimitTimeInForce'] = $stoplimittimeinforce;
+            } else {
+                $opt['stopLimitTimeInForce'] = 'GTC'; // `Good 'till cancel`. Needed if flag `stopLimitPrice` used.
+            }
+        }
+
+        // Check other flags
+        foreach (array('icebergQty','stopIcebergQty','listClientOrderId','limitClientOrderId','stopClientOrderId','newOrderRespType') as $flag) {
+            if ( isset($flags[$flag]) && !empty($flags[$flag]) )
+                $opt[$flag] = $flags[$flag];
+        }
+
+        return $this->httpRequest("v3/order/oco", "POST", $opt, true);
     }    
 }

@@ -4,8 +4,56 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8aa14ff5f3155e8cef99f9c39adde185",
+    "content-hash": "bd26409336b2895353f325199024e165",
     "packages": [
+        {
+            "name": "baitercel/binance-api-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/baitercel/binance-api-php.git",
+                "reference": "ab7770ff7f8205afa3bb9df5852564ca949f1e92"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/baitercel/binance-api-php/zipball/ab7770ff7f8205afa3bb9df5852564ca949f1e92",
+                "reference": "ab7770ff7f8205afa3bb9df5852564ca949f1e92",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "BinanceClass.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bill",
+                    "email": "baitercel@163.com"
+                }
+            ],
+            "description": "Binance API Class and examples of how to use the API.",
+            "homepage": "https://github.com/baitercel/binance-api-php",
+            "keywords": [
+                "api",
+                "binance",
+                "cryptocurrency",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/baitercel/binance-api-php/issues",
+                "source": "https://github.com/baitercel/binance-api-php/tree/master"
+            },
+            "time": "2017-11-03T04:03:36+00:00"
+        },
         {
             "name": "evenement/evenement",
             "version": "v3.0.1",
@@ -52,6 +100,132 @@
                 "source": "https://github.com/igorw/evenement/tree/master"
             },
             "time": "2017-07-23T21:35:13+00:00"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "9d4290de1cfd701f38099ef7e183b64b4b7b0c5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/9d4290de1cfd701f38099ef7e183b64b4b7b0c5e",
+                "reference": "9d4290de1cfd701f38099ef7e183b64b4b7b0c5e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.6.1",
+                "php": ">=5.5",
+                "symfony/polyfill-intl-idn": "^1.17.0"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "psr/log": "^1.1"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "support": {
+                "issues": "https://github.com/guzzle/guzzle/issues",
+                "source": "https://github.com/guzzle/guzzle/tree/6.5"
+            },
+            "time": "2020-06-16T21:01:06+00:00"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/8e7d04f1f6450fef59366c399cfad4b9383aa30d",
+                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^4.4 || ^5.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "support": {
+                "issues": "https://github.com/guzzle/promises/issues",
+                "source": "https://github.com/guzzle/promises/tree/1.4.1"
+            },
+            "time": "2021-03-07T09:25:29+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -130,16 +304,16 @@
         },
         {
             "name": "jaggedsoft/php-binance-api",
-            "version": "v0.5.28",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jaggedsoft/php-binance-api.git",
-                "reference": "577bf515dc56404358784431e25a640a5a905f84"
+                "reference": "f9bad10f13c6e951c90baeb3e441860a1325bbe9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jaggedsoft/php-binance-api/zipball/577bf515dc56404358784431e25a640a5a905f84",
-                "reference": "577bf515dc56404358784431e25a640a5a905f84",
+                "url": "https://api.github.com/repos/jaggedsoft/php-binance-api/zipball/f9bad10f13c6e951c90baeb3e441860a1325bbe9",
+                "reference": "f9bad10f13c6e951c90baeb3e441860a1325bbe9",
                 "shasum": ""
             },
             "require": {
@@ -153,6 +327,7 @@
                 "codacy/coverage": "dev-master",
                 "phpunit/phpunit": "~6"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -172,9 +347,168 @@
             ],
             "support": {
                 "issues": "https://github.com/jaggedsoft/php-binance-api/issues",
-                "source": "https://github.com/jaggedsoft/php-binance-api/tree/v0.5.28"
+                "source": "https://github.com/jaggedsoft/php-binance-api/tree/master"
             },
-            "time": "2021-07-07T14:04:36+00:00"
+            "time": "2021-07-26T19:34:26+00:00"
+        },
+        {
+            "name": "larislackers/php-binance",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/larislackers/php-binance.git",
+                "reference": "321e3a15fb9e70e96362a82d2bb03b1b8da630ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/larislackers/php-binance/zipball/321e3a15fb9e70e96362a82d2bb03b1b8da630ec",
+                "reference": "321e3a15fb9e70e96362a82d2bb03b1b8da630ec",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3",
+                "php": ">=5.5.9",
+                "ratchet/pawl": "^0.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Larislackers\\BinanceApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Panagiotis Papadatis",
+                    "email": "ppapadatis@protonmail.com"
+                },
+                {
+                    "name": "Dimitrios Giouroukis",
+                    "email": "digitalbckp@gmail.com"
+                }
+            ],
+            "description": "A PHP wrapper for the Binance API endpoints.",
+            "homepage": "https://github.com/larislackers/php-binance",
+            "keywords": [
+                "api",
+                "binance",
+                "cryptocurrency",
+                "cryptocurrency-exchanges",
+                "php",
+                "php-library",
+                "wrapper-api"
+            ],
+            "support": {
+                "issues": "https://github.com/larislackers/php-binance/issues",
+                "source": "https://github.com/larislackers/php-binance/tree/v1.0.2"
+            },
+            "abandoned": true,
+            "time": "2017-10-29T21:18:25+00:00"
+        },
+        {
+            "name": "linwj/binance",
+            "version": "2.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zhouaini528/binance-php.git",
+                "reference": "03deae6fa12621ee37c282cfce20a7d5099c76c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zhouaini528/binance-php/zipball/03deae6fa12621ee37c282cfce20a7d5099c76c2",
+                "reference": "03deae6fa12621ee37c282cfce20a7d5099c76c2",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "*",
+                "php": ">=7.0",
+                "workerman/globaldata": "*",
+                "workerman/workerman": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lin\\Binance\\": "./src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "linwenjun",
+                    "email": "465382251@qq.com"
+                }
+            ],
+            "description": "Binance API Like the official document interface, Support for arbitrary extension.",
+            "keywords": [
+                "BitMEX",
+                "Huobi",
+                "OKEX",
+                "binance",
+                "kucoin",
+                "kumex"
+            ],
+            "support": {
+                "issues": "https://github.com/zhouaini528/binance-php/issues",
+                "source": "https://github.com/zhouaini528/binance-php/tree/2.1.6"
+            },
+            "time": "2021-08-05T06:48:47+00:00"
+        },
+        {
+            "name": "mvaessen/binance-api",
+            "version": "0.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mvaessen/binance-api.git",
+                "reference": "149f6f85c3599894fe0a05a147ef220e11cc21fe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mvaessen/binance-api/zipball/149f6f85c3599894fe0a05a147ef220e11cc21fe",
+                "reference": "149f6f85c3599894fe0a05a147ef220e11cc21fe",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "vlucas/phpdotenv": "^2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mvaessen\\BinanceApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Max Vaessen",
+                    "email": "maxvaessen@gmail.com"
+                }
+            ],
+            "description": "Simple Binance API Wrapper, written in PHP. Includes the basics and assumes you know your way around.",
+            "keywords": [
+                "api",
+                "binance"
+            ],
+            "support": {
+                "source": "https://github.com/mvaessen/binance-api/tree/0.2.4"
+            },
+            "time": "2019-03-15T15:59:32+00:00"
         },
         {
             "name": "psr/http-message",
@@ -915,12 +1249,349 @@
                 }
             ],
             "time": "2021-07-11T12:37:55+00:00"
+        },
+        {
+            "name": "symfony/polyfill-intl-idn",
+            "version": "v1.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-intl-idn.git",
+                "reference": "65bd267525e82759e7d8c4e8ceea44f398838e65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-idn/zipball/65bd267525e82759e7d8c4e8ceea44f398838e65",
+                "reference": "65bd267525e82759e7d8c4e8ceea44f398838e65",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "symfony/polyfill-intl-normalizer": "^1.10",
+                "symfony/polyfill-php72": "^1.10"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Idn\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Laurent Bassin",
+                    "email": "laurent@bassin.info"
+                },
+                {
+                    "name": "Trevor Rowbotham",
+                    "email": "trevor.rowbotham@pm.me"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for intl's idn_to_ascii and idn_to_utf8 functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "idn",
+                "intl",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-intl-idn/tree/v1.23.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-05-27T09:27:20+00:00"
+        },
+        {
+            "name": "symfony/polyfill-intl-normalizer",
+            "version": "v1.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-intl-normalizer.git",
+                "reference": "8590a5f561694770bdcd3f9b5c69dde6945028e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-intl-normalizer/zipball/8590a5f561694770bdcd3f9b5c69dde6945028e8",
+                "reference": "8590a5f561694770bdcd3f9b5c69dde6945028e8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "suggest": {
+                "ext-intl": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Intl\\Normalizer\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for intl's Normalizer class and related functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "intl",
+                "normalizer",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-intl-normalizer/tree/v1.23.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-02-19T12:13:01+00:00"
+        },
+        {
+            "name": "symfony/polyfill-php72",
+            "version": "v1.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php72.git",
+                "reference": "9a142215a36a3888e30d0a9eeea9766764e96976"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php72/zipball/9a142215a36a3888e30d0a9eeea9766764e96976",
+                "reference": "9a142215a36a3888e30d0a9eeea9766764e96976",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php72\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php72/tree/v1.23.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-05-27T09:17:38+00:00"
+        },
+        {
+            "name": "workerman/globaldata",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/walkor/GlobalData.git",
+                "reference": "baf3b7af338f329e88136ebe92266dfe40dd00a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/walkor/GlobalData/zipball/baf3b7af338f329e88136ebe92266dfe40dd00a7",
+                "reference": "baf3b7af338f329e88136ebe92266dfe40dd00a7",
+                "shasum": ""
+            },
+            "require": {
+                "workerman/workerman": ">=3.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GlobalData\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "homepage": "http://www.workerman.net",
+            "support": {
+                "issues": "https://github.com/walkor/GlobalData/issues",
+                "source": "https://github.com/walkor/GlobalData/tree/v1.0.3"
+            },
+            "time": "2018-08-16T03:59:34+00:00"
+        },
+        {
+            "name": "workerman/workerman",
+            "version": "v4.0.19",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/walkor/Workerman.git",
+                "reference": "af6025976fba817eeb4d5fbf8d0c1059a5819da3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/walkor/Workerman/zipball/af6025976fba817eeb4d5fbf8d0c1059a5819da3",
+                "reference": "af6025976fba817eeb4d5fbf8d0c1059a5819da3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "suggest": {
+                "ext-event": "For better performance. "
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Workerman\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "walkor",
+                    "email": "walkor@workerman.net",
+                    "homepage": "http://www.workerman.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "An asynchronous event driven PHP framework for easily building fast, scalable network applications.",
+            "homepage": "http://www.workerman.net",
+            "keywords": [
+                "asynchronous",
+                "event-loop"
+            ],
+            "support": {
+                "email": "walkor@workerman.net",
+                "forum": "http://wenda.workerman.net/",
+                "issues": "https://github.com/walkor/workerman/issues",
+                "source": "https://github.com/walkor/workerman",
+                "wiki": "http://doc.workerman.net/"
+            },
+            "time": "2021-03-05T06:44:28+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "baitercel/binance-api-php": 20,
+        "jaggedsoft/php-binance-api": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

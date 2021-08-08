@@ -23,45 +23,33 @@ html, body, #a {  margin: 0;  padding: 0;  height: 70%;   width: 100%; }
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </style>
   <meta http-equiv="refresh" content="99999999">
-
 </head>
-
 <body>
-
 <div id="a">
     <div id="b">
 		<div id="content">
-<h1  style="color: blue"><b> BTC/USDT </b></h1> <p>
+<h1  style="color: blue"><b> BTC/USDT  </b></h1> <br><br><br>
 <span color="red">
+
  <?php
 	require 'vendor/autoload.php';
-
-	$api = new Binance\API("dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY","dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY");
-
-	//$ticker = $api->prices();
+	require 'BinanceApiContainer.php';
+	require 'BinanceClass.php';
+// Pirmas API		jaggedsoft / php-binance-api
+/*
+	$api = new Binance("dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY","dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY");
 	$price = $api->price( "BTCUSDT" );
 	echo '<h4 style="color: red">';
+	echo "$price </h4";
 
-	echo $price;  echo "</h4> <br> <h5>";
+*/ Antras API larislackers/ php-binance
+	$bac = new BinanceApiContainer('dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY', 'dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY');
+$orders = $bac->getOrderBook(['symbol' => 'BTCUSDT']);
+var_dump($orders->getBody()->getContents());
 
-	$bookPrices =  $api->bookPrices();
-//  var_dump($bookPrices); echo "<br><br><br><br>";
-var_dump($bookPrices["BTCUSDT"]); echo "<br><br><br><br>";
 
-$prices = $bookPrices["BTCUSDT"];
-	foreach ( $prices as $cell )
-		{
-			var_dump ($cell); echo "<br>";
 
-		}
+
 
 ?>
-
-</h5>
-</div>
-    </div>
-</div>
-
-
-</body>
-</html>
+</h5></div> </div></div></body></html>

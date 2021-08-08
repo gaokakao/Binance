@@ -1,5 +1,9 @@
 {
     "require": {
-        "jaggedsoft/php-binance-api": "^0.5.28"
+        "larislackers/php-binance": "^1.0",
+        "linwj/binance": "^2.1",
+        "baitercel/binance-api-php": "dev-master",
+        "mvaessen/binance-api": "^0.2.4",
+        "jaggedsoft/php-binance-api": "@dev"
     }
 }

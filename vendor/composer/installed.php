@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '48d344ec717917f20d121bd26c58301b84bc3031',
+        'reference' => 'e53e4d913d7e113976d97e33cc9ab42ad54562f0',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '48d344ec717917f20d121bd26c58301b84bc3031',
+            'reference' => 'e53e4d913d7e113976d97e33cc9ab42ad54562f0',
             'dev_requirement' => false,
         ),
         'baitercel/binance-api-php' => array(

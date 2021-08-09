@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <link rel="icon" href="favicon.png" type="image/x-icon" />
+<meta http-equiv="refresh" content="100">
 <style>
 .container 
 {
@@ -22,34 +23,58 @@ html, body, #a {  margin: 0;  padding: 0;  height: 70%;   width: 100%; }
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </style>
-  <meta http-equiv="refresh" content="99999999">
 </head>
 <body>
 <div id="a">
     <div id="b">
 		<div id="content">
-<h1  style="color: blue"><b> BTC/USDT  </b></h1> <br><br><br>
-<span color="red">
+<h1  style="color: blue"><b> BTC/USDT  </b></h1> <br><br><br><span color="red">
 
  <?php
+	require 'database.php';
+  $db  = new Database;
+																																							   
+
 	require 'vendor/autoload.php';
 	require 'BinanceApiContainer.php';
+	require 'php-binance-api.php';
 	require 'BinanceClass.php';
-// Pirmas API		jaggedsoft / php-binance-api
+
+
+
+$api = new Binance("dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY","MAdQ3jG2DTGUk6bAL4nZ9p3HmGObHKUdekvj1fXGT2uPKb1fEiA5IkrUc773fSIm");
+
+$price = $api->price("USDTBTC");
+echo "Price of BTC: {$price} USDT.".PHP_EOL;
+
+
+$api = new BinanceApiContainer('dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY', 'MAdQ3jG2DTGUk6bAL4nZ9p3HmGObHKUdekvj1fXGT2uPKb1fEiA5IkrUc773fSIm');
+
+// Get all orders for a symbol (BNB/BTC pair).
+//$orders = $api->getOrderBook(['symbol' => 'USDTBTC']);
+ //var_dump($orders->getBody()->getContents());
+// $orderbook = $orders->getBody()->getContents();
+ // var_dump(orderbook);
+// var_dump(json_decode($orderbook));
+//	$parsed = str_getcsv($orderbook);
+//	var_dump($parsed);
+
 /*
-	$api = new Binance("dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY","dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY");
-	$price = $api->price( "BTCUSDT" );
-	echo '<h4 style="color: red">';
-	echo "$price </h4";
+$backwards = array_reverse($parsed);
+$last_item = NULL;
+foreach ($backwards as $current_item) 
+	{
+		$last_item = $current_item;
+		echo " $current_item <br>";
+		echo " $last_item <br>";
+		$price = $last_item;
+		$amount = $current_item;
+		$query =  " INSERT INTO orders 'bid', '$price', '$amount'";
+//		$db->Query($query);
+	}
+							   
+												   
+														  
+*/
 
-*/ Antras API larislackers/ php-binance
-	$bac = new BinanceApiContainer('dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY', 'dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY');
-$orders = $bac->getOrderBook(['symbol' => 'BTCUSDT']);
-var_dump($orders->getBody()->getContents());
-
-
-
-
-
-?>
-</h5></div> </div></div></body></html>
+?> </h5></div> </div></div></body></html>

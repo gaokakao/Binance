@@ -31,33 +31,29 @@ html, body, #a {  margin: 0;  padding: 0;  height: 70%;   width: 100%; }
 <h1  style="color: blue"><b> BTC/USDT  </b></h1> <br><br><br><span color="red">
 
  <?php
-	require 'database.php';
+	require 'lib/database.php';
   $db  = new Database;
 																																							   
-
 	require 'vendor/autoload.php';
-	require 'BinanceApiContainer.php';
-	require 'php-binance-api.php';
-	require 'BinanceClass.php';
+
+	require 'lib/BinanceApiContainer.php';
+	require 'lib/php-binance-api.php';
+	require 'lib/BinanceClass.php';
 
 
+// 3. config by specifying api key and secret
+$api = new Binance\API("dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY","MAdQ3jG2DTGUk6bAL4nZ9p3HmGObHKUdekvj1fXGT2uPKb1fEiA5IkrUc773fSIm");
 
-$api = new Binance("dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY","MAdQ3jG2DTGUk6bAL4nZ9p3HmGObHKUdekvj1fXGT2uPKb1fEiA5IkrUc773fSIm");
 
 $price = $api->price("USDTBTC");
-echo "Price of BTC: {$price} USDT.".PHP_EOL;
+echo "Price of BTC $price <b>USDT<b>";
 
 
-$api = new BinanceApiContainer('dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY', 'MAdQ3jG2DTGUk6bAL4nZ9p3HmGObHKUdekvj1fXGT2uPKb1fEiA5IkrUc773fSIm');
 
-// Get all orders for a symbol (BNB/BTC pair).
-//$orders = $api->getOrderBook(['symbol' => 'USDTBTC']);
- //var_dump($orders->getBody()->getContents());
-// $orderbook = $orders->getBody()->getContents();
- // var_dump(orderbook);
-// var_dump(json_decode($orderbook));
-//	$parsed = str_getcsv($orderbook);
-//	var_dump($parsed);
+
+
+
+
 
 /*
 $backwards = array_reverse($parsed);

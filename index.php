@@ -1,76 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="icon" href="favicon.png" type="image/x-icon" />
-<meta http-equiv="refresh" content="100">
-<style>
-.container 
-{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-}
-html, body, #a {  margin: 0;  padding: 0;  height: 70%;   width: 100%; }
-#a {    display: table; }
-#b {   display: table-cell;  margin: 0;  padding: 0;  text-align: center;  vertical-align: middle; }
-#content {   width: 500px;  height: 500px;   margin: auto;}
-</style>
+<meta charset="UTF-8">    
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="icon" href="favicon.png" type="image/x-icon" />
 <title>Gaokakao</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</style>
+<meta http-equiv="refresh" content="1">
 </head>
 <body>
-<div id="a">
-    <div id="b">
-		<div id="content">
-<h1  style="color: blue"><b> BTC/USDT  </b></h1> <br><br><br><span color="red">
-
+ <div style=' text-align: center;'>
  <?php
-	require 'lib/database.php';
-  $db  = new Database;
-																																							   
-	require 'vendor/autoload.php';
+require 'vendor/autoload.php';
+//$api = new Binance\API('dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY','dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY');
+$api = new Binance\API('dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY','dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY');
+$api = new Binance\RateLimiter(new Binance\API());
 
-	require 'lib/BinanceApiContainer.php';
-	require 'lib/php-binance-api.php';
-	require 'lib/BinanceClass.php';
+echo "<div style='color: Darkblue'> <h1> BTC USDT </h1></div>";
+$price = round($api->price ("BTCUSDT"),4);
+echo "<div style='color: Red'> <br><p><h2>  $price </h2>";
+echo "<h3>";
+$bookPrices = $api->bookPrices("BTCUSDT");
+ $ask = $bookPrices['BTCUSDT']['ask'];
+ $bid = $bookPrices['BTCUSDT']['bid'];
+
+$ticker = $api->prices(); // Make sure you have an updated ticker object for this to work
+$balances = $api->balances($ticker);
+
+foreach ($ticker as &$cell) 
+{
+echo $cell;
+echo "<br>";
+
+}
 
 
-// 3. config by specifying api key and secret
-$api = new Binance\API("dfMGKkg1X7Cq2vEciAMBSVYhWm7k6wQFgsYXDDMtJRsinZr0FGGWAyau9p5KoDIY","MAdQ3jG2DTGUk6bAL4nZ9p3HmGObHKUdekvj1fXGT2uPKb1fEiA5IkrUc773fSIm");
+//$prevDay = $api->prevDay("BTCUSDT");
+//print_r($prevDay);
+//echo "BNB price change since yesterday: ".$prevDay['priceChangePercent']."%".PHP_EOL;
 
 
-$price = $api->price("USDTBTC");
-echo "Price of BTC $price <b>USDT<b>";
+?>
 
-
-
-
-
-
-
-
-/*
-$backwards = array_reverse($parsed);
-$last_item = NULL;
-foreach ($backwards as $current_item) 
-	{
-		$last_item = $current_item;
-		echo " $current_item <br>";
-		echo " $last_item <br>";
-		$price = $last_item;
-		$amount = $current_item;
-		$query =  " INSERT INTO orders 'bid', '$price', '$amount'";
-//		$db->Query($query);
-	}
-							   
-												   
-														  
-*/
-
-?> </h5></div> </div></div></body></html>
+</div></h2></div></body></html>

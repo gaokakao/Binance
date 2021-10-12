@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Counter from './components/Counter.jsx';
 import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 ReactDOM.render(
   <React.StrictMode>

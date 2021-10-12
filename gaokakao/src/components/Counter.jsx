@@ -7,31 +7,28 @@ class Counter extends React.Component
         {
             count: 0,
         };
-    styles=
-        {
-            fontSize: 30,
-            fontWeight: "bold",
-            color: "blue"
-        }
-
     render()
     {
         return (
             <div>
-                <span className="badge badge-warning">
-                    {this.formatCount()}
-                </span>
-                <button class="btn-primary btn-sm m-4">Increment </button>
+                <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+                <button className="btn-primary btn-sm m-4">Increment </button>
 
 
             </div>
 
         );
     }
+    getBadgeClasses()
+    {
+        let classes="badge m2 bg-";
+        classes+=this.state.count===0? "warning":"primary";
+        return classes;
+    }
 
     formatCount()
     {
-        return this.state.count===0? <h2> Zero</h2>:this.state.count;
+        return this.state.count===0? <h3> Zero</h3>:this.state.count;
     }
 
 }

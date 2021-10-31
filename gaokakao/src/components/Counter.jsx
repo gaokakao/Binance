@@ -15,10 +15,16 @@ class Counter extends React.Component
         return <ul> { this.state.tags.map( tag => <li key={ tag }>{ tag }</li> ) } </ul>;
     }
 
-    handleIncrement = () =>
+    handleIncrement = ( product ) =>
     {
+        console.log( product )
         this.setState( { count: this.state.count + 1 } );
     }
+
+    doHandleIncrement = () =>
+    {
+        this.handleIncrement( { id: 1 } );
+    };
     render ()
     {
         return (
